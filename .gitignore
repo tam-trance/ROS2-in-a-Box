@@ -1,0 +1,36 @@
+# Bazel output
+bazel-*
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# MacOS
+*.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Vendor (we want to commit vendor, but maybe not temp files inside if any)
+# But vendor/ is source now.
+
+# Ignore rules_ros2 if it is a submodule?
+# The output says "new file: rules_ros2".
+# "modified: rules_ros2 (modified content, untracked content)"
+# This means rules_ros2 is a submodule but I modified it.
+# If I want to commit my changes to rules_ros2, I should commit INSIDE rules_ros2 first.
+# But I am vendoring everything.
+# If I commit 'vendor/', I don't strictly need 'rules_ros2' as a submodule if I am fully detached?
+# But 'vendor.py' uses 'rules_ros2' to find patches.
+# I should commit the changes to 'rules_ros2' if possible, or just commit the overlay files I modified.
+# Since 'rules_ros2' is a submodule, I can't just "add" the changes from the root.
+# I have to commit inside 'rules_ros2' or leave it dirty (bad).
+
+# The user said "we're in a brand new git repo".
+# If I am in a brand new repo, maybe I should untrack rules_ros2 submodule and just treat it as source?
+# Or keep it as submodule and fork it?
+# Given "fix the build rules" request, I modified rules_ros2 files.
+# I'll create a .gitignore first.
