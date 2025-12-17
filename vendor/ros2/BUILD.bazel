@@ -1,8 +1,0 @@
-""" Builds ros2.
-"""
-
-filegroup(
-    name = "repos",
-    srcs = ["ros2.repos"],
-    visibility = ["//visibility:public"],
-)

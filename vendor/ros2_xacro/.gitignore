@@ -1,4 +1,0 @@
-*.pyc
-build
-bazel-*
-MODULE.bazel.lock

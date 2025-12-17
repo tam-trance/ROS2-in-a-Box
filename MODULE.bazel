@@ -1,5 +1,0 @@
-module(name = "perimeta_v2")
-
-bazel_dep(name = "rules_python", version = "0.40.0")
-bazel_dep(name = "rules_ros2", version = "0.0.0")
-local_path_override(module_name = "rules_ros2", path = "rules_ros2")

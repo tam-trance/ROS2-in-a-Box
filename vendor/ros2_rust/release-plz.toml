@@ -1,6 +1,0 @@
-[workspace]
-
-[[package]]
-name = "rclrs"
-publish_features = ["use_ros_shim"]
-publish_all_features = false
