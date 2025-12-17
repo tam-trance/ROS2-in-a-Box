@@ -6,6 +6,9 @@ bazel-*
 __pycache__/
 *.pyc
 
+# MacOS
+*.DS_Store
+
 # IDEs
 .vscode/
 .idea/
