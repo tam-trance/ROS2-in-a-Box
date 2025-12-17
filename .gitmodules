@@ -1,0 +1,3 @@
+[submodule "rules_ros2"]
+	path = rules_ros2
+	url = https://github.com/mvukov/rules_ros2.git
