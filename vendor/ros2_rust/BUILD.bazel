@@ -1,0 +1,82 @@
+""" Builds ros2_rust.
+"""
+
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load("@com_github_mvukov_rules_ros2//ros2:rust_interfaces.bzl", "rust_ros2_interface_library")
+load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_ros2_pip_deps//:requirements.bzl", "requirement")
+load("@rules_rust//rust:defs.bzl", "rust_library")
+load("@rules_rust_bindgen//:defs.bzl", "rust_bindgen")
+
+cc_library(
+    name = "rcl_wrapper",
+    hdrs = ["rclrs/src/rcl_wrapper.h"],
+    deps = [
+        "@ros2_rcl//:rcl",
+        "@ros2_rcl//:rcl_action",
+        "@ros2_rcl//:rcl_yaml_param_parser",
+        "@ros2_rcutils//:rcutils",
+        "@ros2_rmw//:rmw",
+        "@ros2_rosidl//:rosidl_typesupport_introspection_c",
+    ],
+)
+
+rust_bindgen(
+    name = "rclrs/src/rcl_bindings_generated",
+    bindgen_flags = [
+        "--allowlist-type=rcl_.*",
+        "--allowlist-type=rmw_.*",
+        "--allowlist-type=rcutils_.*",
+        "--allowlist-type=rosidl_.*",
+        "--allowlist-function=rcl_.*",
+        "--allowlist-function=rmw_.*",
+        "--allowlist-function=rcutils_.*",
+        "--allowlist-function=rosidl_.*",
+        "--allowlist-var=rcl_.*",
+        "--allowlist-var=rmw_.*",
+        "--allowlist-var=rcutils_.*",
+        "--allowlist-var=rosidl_.*",
+        "--no-derive-copy",
+        "--no-layout-tests",
+        "--default-enum-style=rust",
+    ],
+    cc_lib = ":rcl_wrapper",
+    header = "rclrs/src/rcl_wrapper.h",
+)
+
+rust_ros2_interface_library(
+    name = "rust_interfaces",
+    deps = [
+        "@ros2_rcl_interfaces//:action_msgs",
+        "@ros2_rcl_interfaces//:builtin_interfaces",
+        "@ros2_rcl_interfaces//:rcl_interfaces",
+        "@ros2_rcl_interfaces//:rosgraph_msgs",
+        "@ros2_unique_identifier_msgs//:unique_identifier_msgs",
+    ],
+)
+
+rust_library(
+    name = "rclrs",
+    srcs = glob(
+        ["rclrs/src/**/*.rs"],
+        exclude = ["rclrs/src/vendor/*.rs"],
+    ) + [
+        "rclrs/src/rcl_bindings_generated.rs",
+    ],
+    edition = "2021",
+    rustc_flags = ["--cfg=ros_distro=\"humble\""],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":rcl_wrapper",
+        ":rust_interfaces",
+        "@ros2_rosidl_runtime_rs//:rosidl_runtime_rs",
+        "@rules_ros2_crate_index//:async-std",
+        "@rules_ros2_crate_index//:async-stream",
+        "@rules_ros2_crate_index//:futures",
+        "@rules_ros2_crate_index//:futures-lite",
+        "@rules_ros2_crate_index//:tokio",
+        "@rules_ros2_crate_index//:tokio-stream",
+        "@rules_ros2_crate_index//:uuid",
+    ],
+)
