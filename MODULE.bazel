@@ -1,5 +1,108 @@
 module(name = "perimeta_v2")
 
 bazel_dep(name = "rules_python", version = "0.40.0")
+bazel_dep(name = "rules_cc", version = "0.0.17")
 bazel_dep(name = "rules_ros2", version = "0.0.0")
 local_path_override(module_name = "rules_ros2", path = "rules_ros2")
+local_path_override(module_name = "rules_python", path = "vendor/rules_python")
+
+# Overrides for vendored modules
+bazel_dep(name = "rules_shell", version = "0.0.0")
+local_path_override(module_name = "rules_shell", path = "vendor/rules_shell")
+
+bazel_dep(name = "bazel_skylib", version = "1.8.2")
+local_path_override(module_name = "bazel_skylib", path = "vendor/bazel_skylib")
+
+bazel_dep(name = "bazel_features", version = "0.0.0")
+local_path_override(module_name = "bazel_features", path = "vendor/bazel_features")
+
+bazel_dep(name = "googletest", version = "1.17.0")
+local_path_override(module_name = "googletest", path = "vendor/googletest")
+
+bazel_dep(name = "rules_license", version = "1.0.0")
+local_path_override(module_name = "rules_license", path = "vendor/rules_license")
+
+bazel_dep(name = "rules_rust", version = "0.67.0")
+local_path_override(module_name = "rules_rust", path = "vendor/rules_rust")
+
+bazel_dep(name = "rules_rust_bindgen", version = "0.67.0")
+local_path_override(module_name = "rules_rust_bindgen", path = "vendor/rules_rust_bindgen")
+
+bazel_dep(name = "rules_foreign_cc", version = "0.0.0")
+local_path_override(module_name = "rules_foreign_cc", path = "vendor/rules_foreign_cc")
+
+# Load vendored repositories via extension
+ros2_deps = use_extension("@rules_ros2//repositories:extensions.bzl", "ros2_deps")
+use_repo(
+    ros2_deps,
+    "asio",
+    "boringssl",
+    "console_bridge",
+    "curl",
+    "cyclonedds",
+    "eigen",
+    "fmt",
+    "foxglove_bridge",
+    "iceoryx",
+    "libyaml",
+    "lz4",
+    "mcap",
+    "nlohmann_json",
+    "orocos_kdl",
+    "osrf_pycommon",
+    "pybind11",
+    "readerwriterqueue",
+    "ros2",
+    "ros2_ament_index",
+    "ros2_class_loader",
+    "ros2_common_interfaces",
+    "ros2_diagnostics",
+    "ros2_geometry2",
+    "ros2_gps_umd",
+    "ros2_image_common",
+    "ros2_kdl_parser",
+    "ros2_keyboard_handler",
+    "ros2_launch",
+    "ros2_launch_ros",
+    "ros2_libstatistics_collector",
+    "ros2_message_filters",
+    "ros2_pluginlib",
+    "ros2_rcl",
+    "ros2_rcl_interfaces",
+    "ros2_rcl_logging",
+    "ros2_rcl_logging_syslog",
+    "ros2_rclcpp",
+    "ros2_rclpy",
+    "ros2_rcpputils",
+    "ros2_rcutils",
+    "ros2_resource_retriever",
+    "ros2_rmw",
+    "ros2_rmw_cyclonedds",
+    "ros2_rmw_dds_common",
+    "ros2_rmw_implementation",
+    "ros2_robot_state_publisher",
+    "ros2_rosbag2",
+    "ros2_rosidl",
+    "ros2_rosidl_python",
+    "ros2_rosidl_runtime_py",
+    "ros2_rosidl_runtime_rs",
+    "ros2_rosidl_rust",
+    "ros2_rosidl_typesupport",
+    "ros2_rpyutils",
+    "ros2_rust",
+    "ros2_tracing",
+    "ros2_unique_identifier_msgs",
+    "ros2_urdf",
+    "ros2_urdfdom",
+    "ros2_urdfdom_headers",
+    "ros2_xacro",
+    "ros2cli",
+    "spdlog",
+    "sqlite3",
+    "tinyxml",
+    "tinyxml2",
+    "websocketpp",
+    "yaml-cpp",
+    "zlib",
+    "zstd",
+)
