@@ -25,8 +25,8 @@ local_path_override(module_name = "rules_license", path = "vendor/rules_license"
 bazel_dep(name = "rules_rust", version = "0.68.1")
 local_path_override(module_name = "rules_rust", path = "vendor/rules_rust")
 
-bazel_dep(name = "rules_rust_bindgen", version = "0.67.0")
-local_path_override(module_name = "rules_rust_bindgen", path = "vendor/rules_rust_bindgen")
+bazel_dep(name = "rules_rust_bindgen", version = "0.68.1")
+local_path_override(module_name = "rules_rust_bindgen", path = "vendor/rules_rust/extensions/bindgen")
 
 bazel_dep(name = "rules_foreign_cc", version = "0.0.0")
 local_path_override(module_name = "rules_foreign_cc", path = "vendor/rules_foreign_cc")
