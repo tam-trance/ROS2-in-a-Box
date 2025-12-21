@@ -1517,7 +1517,7 @@
           "CARGO_BAZEL_GENERATOR_SHA256": null,
           "CARGO_BAZEL_GENERATOR_URL": null,
           "CARGO_BAZEL_ISOLATED": null,
-          "CARGO_BAZEL_REPIN": "1",
+          "CARGO_BAZEL_REPIN": null,
           "CARGO_BAZEL_REPIN_ONLY": null,
           "CARGO_BAZEL_TIMEOUT": null,
           "REPIN": null
@@ -2853,8 +2853,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "rorDMYTIANmV0s6DZN1ZzrZWjbcaOwzyKYQvD8Cfa5k=",
-        "usagesDigest": "2UEHbcBdiZSq+CfvXGDogYj3NLdF/PuuKpAvcaaiTsE=",
+        "bzlTransitiveDigest": "LIwied5no6AOeLJ7afFjaBRd4ryYRUlgvpA8/Fl/tl0=",
+        "usagesDigest": "oUK0ytEbfl+CaIzEjRqZCnsb5eUCZOx9usreQy09/3o=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
