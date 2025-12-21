@@ -318,7 +318,7 @@
     },
     "@@rules_ros2+//repositories:extensions.bzl%ros2_deps": {
       "general": {
-        "bzlTransitiveDigest": "lWLgzxqb8HOnEuzCOFgFDPocEQ99eJ8C9IfvDsFMl0I=",
+        "bzlTransitiveDigest": "EybY8T3/YO3cnarvL1j3CbP4GeP4c1ij6T8d9sZAgGU=",
         "usagesDigest": "yFrF7QZll16dww8sGTAYVjcgi9w6H3f/ojJ75by5HYs=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -1048,6 +1048,14 @@
               "build_file": "@@rules_ros2++ros2_deps+rules_rust_bindgen//3rdparty:BUILD.bindgen-cli.bazel"
             }
           },
+          "rules_rust_bindgen": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+            "attributes": {
+              "integrity": "sha256-yKqAbPYGZnmsI0YyQe6ArWkiZdrQRl9RERy74wuJA1I=",
+              "strip_prefix": "extensions/bindgen",
+              "url": "https://github.com/bazelbuild/rules_rust/releases/download/0.68.1/rules_rust-0.68.1.tar.gz"
+            }
+          },
           "asio": {
             "repoRuleId": "@@rules_ros2+//repositories:extensions.bzl%vendored_repository",
             "attributes": {
@@ -1420,12 +1428,6 @@
               "repo_name": "ros2cli"
             }
           },
-          "rules_rust_bindgen": {
-            "repoRuleId": "@@rules_ros2+//repositories:extensions.bzl%vendored_repository",
-            "attributes": {
-              "repo_name": "rules_rust_bindgen"
-            }
-          },
           "spdlog": {
             "repoRuleId": "@@rules_ros2+//repositories:extensions.bzl%vendored_repository",
             "attributes": {
@@ -1515,7 +1517,7 @@
           "CARGO_BAZEL_GENERATOR_SHA256": null,
           "CARGO_BAZEL_GENERATOR_URL": null,
           "CARGO_BAZEL_ISOLATED": null,
-          "CARGO_BAZEL_REPIN": null,
+          "CARGO_BAZEL_REPIN": "1",
           "CARGO_BAZEL_REPIN_ONLY": null,
           "CARGO_BAZEL_TIMEOUT": null,
           "REPIN": null
