@@ -1,7 +1,7 @@
 module(name = "perimeta_v2")
 
 bazel_dep(name = "rules_python", version = "0.40.0")
-bazel_dep(name = "rules_cc", version = "0.0.17")
+bazel_dep(name = "rules_cc", version = "0.2.8")
 bazel_dep(name = "rules_ros2", version = "0.0.0")
 local_path_override(module_name = "rules_ros2", path = "rules_ros2") # TT !! use the local copy instead of dwlding it each time (aka the vendoring process)
 local_path_override(module_name = "rules_python", path = "vendor/rules_python") # TT: rules_ros2 not in vendor since its a git subrepo
@@ -22,7 +22,7 @@ local_path_override(module_name = "googletest", path = "vendor/googletest")
 bazel_dep(name = "rules_license", version = "1.0.0")
 local_path_override(module_name = "rules_license", path = "vendor/rules_license")
 
-bazel_dep(name = "rules_rust", version = "0.67.0")
+bazel_dep(name = "rules_rust", version = "0.68.1")
 local_path_override(module_name = "rules_rust", path = "vendor/rules_rust")
 
 bazel_dep(name = "rules_rust_bindgen", version = "0.67.0")
