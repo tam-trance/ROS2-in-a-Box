@@ -319,7 +319,7 @@
     },
     "@@rules_ros2+//repositories:extensions.bzl%ros2_deps": {
       "general": {
-        "bzlTransitiveDigest": "4f9Td1Xe1IPbKTpUNjRQoeucerQ6hJsISfSKqPEOEyE=",
+        "bzlTransitiveDigest": "nBvt9p6GXLhE3hUO8h/dQbAcs83VH6T9ys6NPSt/7lw=",
         "usagesDigest": "yFrF7QZll16dww8sGTAYVjcgi9w6H3f/ojJ75by5HYs=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
