@@ -59,3 +59,4 @@ build --@rules_python//python/config_settings:python_version=3.10
 build --macos_minimum_os=11.0
 build --host_macos_minimum_os=11.0
 common --repo_env=ROS2_VENDOR_DIR=%workspace%/vendor
+common --enable_bzlmod --noenable_workspace

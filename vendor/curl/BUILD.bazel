@@ -34,12 +34,6 @@ configure_make(
         "--without-nghttp2",
     ],
     out_static_libs = ["libcurl.a"],
-    postfix_script = """
-echo "=== POSTFIX DEBUG ==="
-echo "INSTALLDIR: $${INSTALLDIR}"
-ls -R $${INSTALLDIR}
-echo "=== END POSTFIX DEBUG ==="
-    """,
     visibility = ["//visibility:public"],
     deps = [
         "@boringssl//:ssl",
