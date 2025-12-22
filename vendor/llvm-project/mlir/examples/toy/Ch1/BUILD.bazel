@@ -1,0 +1,20 @@
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+
+# Description:
+#   MLIR Tutorial
+licenses(["notice"])
+
+package(default_visibility = ["//visibility:public"])
+
+cc_binary(
+    name = "toyc-ch1",
+    srcs = [
+        "parser/AST.cpp",
+        "toyc.cpp",
+    ] + glob(["include/toy/*"]),
+    includes = ["include/"],
+    deps = [
+        "//llvm:Support",
+        "//mlir:Support",
+    ],
+)
