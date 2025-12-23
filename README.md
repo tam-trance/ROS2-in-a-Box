@@ -125,3 +125,7 @@ To add a new ROS 2 node to this workspace:
 - **Delete symlinks before building**: If you are getting build issues, delete the symlinks `bazel-*` with `rm -rf bazel-*`.
 - **"No module named..."**: Ensure your `py_binary` targets have the correct `imports` or dependencies.
 - **Path Issues**: Launch files should use robust path resolution (relative to `__file__`) as demonstrated in the examples, especially because `rules_ros2` is an external dependency.
+
+## Acknowledgements
+
+Special thanks to [Dilip](https://github.com/diku89) for providing the project concept and technical guidance throughout development. Additionally, build infrastructure and portions of the documentation were generated with the assistance of AI/Gemini. 
