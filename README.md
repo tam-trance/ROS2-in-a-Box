@@ -1,4 +1,4 @@
-# Perimeta_v2 Workspace
+# ROS2-in-a-Box Workspace
 
 This repository represents a robust, self-contained Bazel workspace for developing ROS 2 applications. It features a heavily adapted and "frozen" version of ROS 2 build rules, designed to provide a hermetic and reproducible development environment without requiring a system-level ROS 2 installation.
 
@@ -20,7 +20,7 @@ We started with the excellent [mvukov/rules_ros2](https://github.com/mvukov/rule
 ## Directory Structure
 
 ```text
-Perimeta_v2/
+ROS2-in-a-Box/
 ├── MODULE.bazel        # Root module definition
 ├── rules_ros2/         # The "Frozen" ROS 2 build system (modified & vendored)
 │   ├── examples/       # Standard ROS 2 examples (chatter, actions, etc.)
