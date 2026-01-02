@@ -8,7 +8,7 @@ This repository represents a robust, self-contained Bazel workspace for developi
 
 The core idea of this workspace is **"ROS 2 in a Box"**.
 
-We started with the excellent [mvukov/rules_ros2](https://github.com/mvukov/rules_ros2) repository, which provides Bazel rules for ROS 2 Humble. We then significantly transformed it to serve as a stable, foundational **Bazel Module**:
+We started with the excellent [mvukov/rules_ros2](https://github.com/mvukov/rules_ros2) repository, which provides Bazel 7 rules for ROS 2 Humble on non-MacOS systems. We then significantly transformed it to serve as a stable, foundational **Bazel Module**:
 
 1.  **Modularization**: We converted the original repository into a dedicated submodule (`rules_ros2/`) that acts as a dependency for this root workspace. Your application code lives "outside" the ROS 2 rules, treating the ROS 2 build system as a toolchain rather than a parent project.
     
@@ -128,4 +128,4 @@ To add a new ROS 2 node to this workspace:
 
 ## Acknowledgements
 
-Special thanks to [Dilip](https://github.com/diku89) for providing the project concept and technical guidance throughout development. Additionally, build infrastructure and portions of the documentation were generated with the assistance of AI/Gemini. 
+Special thanks to [Dilip](https://github.com/diku89) for providing the project concept and technical guidance throughout development! And Google Gemini 3 Pro (in AI we trust 🫶)
